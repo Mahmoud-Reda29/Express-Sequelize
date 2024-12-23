@@ -7,12 +7,11 @@ This project is a Node.js API built with Express and Sequelize. It provides endp
 
 ## Features
 
-- User management (create, update, delete, retrieve)
-- Post management (create, update, delete, retrieve)
-- Comment management (create, update, delete, retrieve)
+- User management
+- Post management 
+- Comment management 
 - Soft deletes for posts
 - Eager loading of related data (users, posts, comments)
-- Authentication middleware
 - Validation and error handling
 - Postman collection for testing endpoints
 

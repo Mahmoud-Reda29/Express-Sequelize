@@ -1,6 +1,4 @@
-Here's a professional README for your project, including information about the Postman collection for testing endpoints:
 
-```markdown
 # Node.js API Project
 
 ## Overview

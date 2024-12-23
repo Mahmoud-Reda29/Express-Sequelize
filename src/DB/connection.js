@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-export const sequelize = new Sequelize({
+export const databaseConnection = new Sequelize({
   dialect: process.env.DB_DIALECT || "mysql",
   host: process.env.DB_HOST || "localhost",
   port: process.env.DB_PORT || 3306,
@@ -11,10 +11,19 @@ export const sequelize = new Sequelize({
 
 export const checkConnection = async () => {
   try {
-    await sequelize.authenticate();
+    await databaseConnection.authenticate();
     console.log("Connection has been established successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
 };
 
+
+export const syncDatabase = async () => {
+  try {
+    await databaseConnection.sync({ force: false, alter: false });
+    console.log("Database synced successfully.");
+  } catch (error) {
+    console.error("Error syncing database:", error);
+  }
+};
